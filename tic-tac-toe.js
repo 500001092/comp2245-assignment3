@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const squares = document.querySelectorAll("#game-board div");
     const statusDiv = document.getElementById("status");
-    const newGameButton = document.getElementById("new-game"); 
+    const newGameButton = document.getElementById("new-game");
 
     let currentPlayer = "X";
     let gameState = Array(9).fill(""); 

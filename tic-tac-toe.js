@@ -20,7 +20,23 @@ document.addEventListener("DOMContentLoaded", function() {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
     }
 
+    function handleMouseEnter(event) {
+        const hoveredSquare = event.target;
+        const squareIndex = Array.from(squares).indexOf(hoveredSquare);
+
+        if (gameState[squareIndex] === "") {
+            hoveredSquare.classList.add("hover");
+        }
+    }
+
+    function handleMouseLeave(event) {
+        const hoveredSquare = event.target;
+        hoveredSquare.classList.remove("hover");
+    }
+
     squares.forEach(function(square) {
         square.addEventListener("click", handleSquareClick);
+        square.addEventListener("mouseenter", handleMouseEnter);
+        square.addEventListener("mouseleave", handleMouseLeave);
     });
 });
